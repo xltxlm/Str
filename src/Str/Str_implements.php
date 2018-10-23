@@ -29,4 +29,11 @@ abstract class Str_implements
         return $this;
     }
 
+    /**
+     *        *   @return :string;
+    */
+    public function __toString():string    {
+return $this->Value;
+    }
+
 }
