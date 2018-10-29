@@ -14,7 +14,7 @@
   ],
   "require": {
     "php": ">=7.1",
-    "xltxlm/arr": "dev-master"
+    "xltxlm/arr": "@dev"
   },
   "autoload": {
     "psr-4": {
