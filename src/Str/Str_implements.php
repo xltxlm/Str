@@ -30,10 +30,17 @@ abstract class Str_implements
     }
 
     /**
-     *        *   @return :string;
+     *   ;
+     *   @return :string;
     */
     public function __toString():string    {
 return $this->Value;
     }
+
+    /**
+     *   根据指定的字符串,砍成数组对象,注意:会去掉空内容;
+     *   @return :\xltxlm\Arr\Arr;
+    */
+    abstract public function Split(string $delimiter = null):\xltxlm\Arr\Arr;
 
 }
