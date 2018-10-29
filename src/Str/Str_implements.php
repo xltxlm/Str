@@ -1,5 +1,5 @@
 <?php
-namespace xltxlm\Str\Str;
+namespace xltxlm\str\Str;
 
 /**
  * 字符串类型的基本操作函数集合;
@@ -42,5 +42,19 @@ return $this->Value;
      *   @return :\xltxlm\Arr\Arr;
     */
     abstract public function Split(string $delimiter = null):\xltxlm\Arr\Arr;
+
+    /**
+     *   字符串替换;
+     *   @return :string;
+    */
+    abstract public function Strtr(string $oldvar = null, $newvar = null):string;
+    /**
+     * @return $this
+     */
+    function Strtr_this(string $oldvar = null, $newvar = null)
+    {
+        $this->Strtr($oldvar,$newvar);
+        return $this;
+    }
 
 }

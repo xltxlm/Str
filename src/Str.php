@@ -15,5 +15,12 @@ class Str extends Str\Str_implements
             ->setValues(explode($delimiter, $this->getValue()));
     }
 
+    public function Strtr(string $oldvar = null, $newvar = null): string
+    {
+        $var = strtr($this->getValue(), [$oldvar => $newvar]);
+        $this->setValue($var);
+        return $var;
+    }
+
 
 }
