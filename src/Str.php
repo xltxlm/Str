@@ -22,5 +22,15 @@ class Str extends Str\Str_implements
         return $var;
     }
 
+    public function Ucfirst(): string
+    {
+        return ucfirst($this->getValue());
+    }
+
+    public function Lcfirst(): string
+    {
+        return lcfirst($this->getValue());
+    }
+
 
 }

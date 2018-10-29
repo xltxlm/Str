@@ -57,4 +57,32 @@ return $this->Value;
         return $this;
     }
 
+    /**
+     *   首字母大写;
+     *   @return :string;
+    */
+    abstract public function Ucfirst():string;
+    /**
+     * @return $this
+     */
+    function Ucfirst_this()
+    {
+        $this->Ucfirst();
+        return $this;
+    }
+
+    /**
+     *   首字母小写;
+     *   @return :string;
+    */
+    abstract public function Lcfirst():string;
+    /**
+     * @return $this
+     */
+    function Lcfirst_this()
+    {
+        $this->Lcfirst();
+        return $this;
+    }
+
 }
