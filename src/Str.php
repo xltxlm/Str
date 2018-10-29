@@ -1,6 +1,6 @@
 <?php
 
-namespace xltxlm\Str;
+namespace xltxlm\str;
 
 use xltxlm\arr\Arr;
 
