@@ -14,7 +14,7 @@ class Str_To_Pinyin extends Str_To_Pinyin\Str_To_Pinyin_implements
         $pinyin = new Pinyin();
         $item = trim(strtr($this->getValue(), ["'" => '']));
         $sentence = $pinyin->sentence($item);
-        return preg_replace('/[ ，,]/', '_', strtoupper($sentence));
+        return preg_replace('/[ ，,]/', $this->getGlue(), strtoupper($sentence));
     }
 
 

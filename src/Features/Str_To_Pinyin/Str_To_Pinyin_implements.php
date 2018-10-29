@@ -9,7 +9,7 @@ abstract class Str_To_Pinyin_implements
 
 
 
-    /* @var string  */
+    /* @var string 需要处理的文字 */
         protected $Value = '';
     
     /**
@@ -26,6 +26,26 @@ abstract class Str_To_Pinyin_implements
     public function setValue(string $Value)
     {
         $this->Value = $Value;
+        return $this;
+    }
+
+    /* @var string 拼音中间的链接字符串,默认下划线 */
+        protected $Glue = '_';
+    
+    /**
+     * @return string;
+     */
+    public function getGlue():string    {
+        return $this->Glue;
+    }
+
+    /**
+     * @param string $Glue;
+     * @return $this
+     */
+    public function setGlue(string $Glue)
+    {
+        $this->Glue = $Glue;
         return $this;
     }
 
