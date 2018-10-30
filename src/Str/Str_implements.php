@@ -1,12 +1,14 @@
 <?php
 namespace xltxlm\str\Str;
 
+use \xltxlm\str\Plus\__to;
 /**
  * 字符串类型的基本操作函数集合;
 */
 abstract class Str_implements
 {
 
+    use __to;
 
 
     /* @var string 要处理的字符串内容 */

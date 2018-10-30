@@ -9,6 +9,17 @@ use xltxlm\arr\Arr;
  */
 class Str extends Str\Str_implements
 {
+
+    /**
+     * Str constructor.
+     */
+    public function __construct(string $Value = '')
+    {
+        if ($Value) {
+            $this->setValue($Value);
+        }
+    }
+
     public function Split(string $delimiter = null): \xltxlm\Arr\Arr
     {
         return (new Arr())
@@ -30,6 +41,24 @@ class Str extends Str\Str_implements
     public function Lcfirst(): string
     {
         return lcfirst($this->getValue());
+    }
+
+    public function Substr(int $Index = null, $Length = null): string
+    {
+        $var = substr($this->getValue(), $Index, $Length ?: strlen($this->getValue()));
+        $this->setValue($var);
+        return $var;
+    }
+
+    public function Strpos(string $Compare_String = null): bool
+    {
+        return strpos($this->getValue(), $Compare_String) !== false;
+    }
+
+
+    public function One_Str_by_Index(int $Index = null): string
+    {
+        return $this->Substr($Index, 1);
     }
 
 
