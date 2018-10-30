@@ -9,6 +9,18 @@ use Overtrue\Pinyin\Pinyin;
  */
 class Str_To_Pinyin extends Str_To_Pinyin\Str_To_Pinyin_implements
 {
+
+
+    /**
+     * Str_To_Pinyin constructor.
+     */
+    public function __construct(string $Value = '')
+    {
+        if ($Value) {
+            $this->setValue($Value);
+        }
+    }
+
     public function __invoke()
     {
         $pinyin = new Pinyin();

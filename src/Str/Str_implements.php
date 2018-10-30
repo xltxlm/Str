@@ -87,4 +87,30 @@ return $this->Value;
         return $this;
     }
 
+    /**
+     *   从指定索引开始砍字符串;
+     *   @return :string;
+    */
+    abstract public function Substr(int $Index = null, $Length = null):string;
+    /**
+     * @return $this
+     */
+    function Substr_this(int $Index = null, $Length = null)
+    {
+        $this->Substr($Index,$Length);
+        return $this;
+    }
+
+    /**
+     *   是否包含另外一个字符串;
+     *   @return :bool;
+    */
+    abstract public function Strpos(string $Compare_String = null):bool;
+
+    /**
+     *   返回指定索引的那个字符,从0开始数起;
+     *   @return :string;
+    */
+    abstract public function One_Str_by_Index(int $Index = null):string;
+
 }
