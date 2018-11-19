@@ -16,9 +16,15 @@ class Str extends Str\Str_implements
     public function __construct(string $Value = '')
     {
         if ($Value) {
-            $this->setValue($Value);
+            $this->setValue(trim($Value));
         }
     }
+
+    public function getLastChar(): string
+    {
+        return substr($this->getValue(), -1);
+    }
+
 
     public function Split(string $delimiter = null): \xltxlm\Arr\Arr
     {
@@ -26,7 +32,7 @@ class Str extends Str\Str_implements
             ->setValues(explode($delimiter, $this->getValue()));
     }
 
-    public function Strtr(string $oldvar = null, $newvar = null): string
+    public function Strtr(string $oldvar = null, string $newvar = null): string
     {
         $var = strtr($this->getValue(), [$oldvar => $newvar]);
         $this->setValue($var);

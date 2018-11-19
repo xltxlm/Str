@@ -13,6 +13,11 @@ class Strpos_55
     public function __invoke()
     {
         $true = (new Str('abcc'))
+            ->Strpos('abc');
+        \xltxlm\helper\Util::d($true);
+        assert($true == true);
+
+        $true = (new Str('abcc'))
             ->Strpos('cc');
         \xltxlm\helper\Util::d($true);
         assert($true == true);
