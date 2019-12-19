@@ -9,7 +9,7 @@
   "require": {
     "php": ">=7.1",
     "xltxlm/arr": "@dev",
-    "overtrue/pinyin": "~3.0"
+    "overtrue/pinyin": "4.0.5"
   },
   "autoload": {
     "psr-4": {
