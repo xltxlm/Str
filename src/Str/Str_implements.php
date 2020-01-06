@@ -3,6 +3,7 @@ namespace xltxlm\str\Str;
 
 use \xltxlm\str\Plus\__to;
 /**
+ * :类;
  * 字符串类型的基本操作函数集合;
 */
 abstract class Str_implements
@@ -30,16 +31,18 @@ abstract class Str_implements
 
 
 
-
 /**
 * @param string $Value;
 * @return $this
 */
-    public function setValue(string $Value)
+    public function setValue(string $Value  = "")
     {
     $this->Value = $Value;
     return $this;
     }
+
+
+
 /* @var string  获取最后一个字符串 */
     protected $LastChar = '';
 
@@ -57,16 +60,18 @@ abstract class Str_implements
 
 
 
-
 /**
 * @param string $LastChar;
 * @return $this
 */
-    protected function setLastChar(string $LastChar)
+    protected function setLastChar(string $LastChar  = "")
     {
     $this->LastChar = $LastChar;
     return $this;
     }
+
+
+
 /**
 *  ;
 *  @return :string;
@@ -83,14 +88,14 @@ abstract public function Split(string $delimiter = null):\xltxlm\Arr\Arr;
 *  字符串替换;
 *  @return :string;
 */
-abstract public function Strtr(string $newvar = null,string $oldvar = null):string;
+abstract public function Strtr(string $oldvar = null,string $newvar = null):string;
     /**
     * @return $this
     */
-    function Strtr_this(string $newvar = null,string $oldvar = null)
+    function Strtr_this(string $oldvar = null,string $newvar = null)
     {
-    $this->Strtr($newvar,$oldvar);
-    return $this;
+        $this->Strtr($oldvar,$newvar);
+        return $this;
     }
 /**
 *  首字母大写;
@@ -102,8 +107,8 @@ abstract public function Ucfirst():string;
     */
     function Ucfirst_this()
     {
-    $this->Ucfirst();
-    return $this;
+        $this->Ucfirst();
+        return $this;
     }
 /**
 *  首字母小写;
@@ -115,8 +120,8 @@ abstract public function Lcfirst():string;
     */
     function Lcfirst_this()
     {
-    $this->Lcfirst();
-    return $this;
+        $this->Lcfirst();
+        return $this;
     }
 /**
 *  从指定索引开始砍字符串;
@@ -128,8 +133,8 @@ abstract public function Substr(int $Index = null, $Length = null):string;
     */
     function Substr_this(int $Index = null, $Length = null)
     {
-    $this->Substr($Index,$Length);
-    return $this;
+        $this->Substr($Index,$Length);
+        return $this;
     }
 /**
 *  是否包含另外一个字符串;
@@ -141,4 +146,17 @@ abstract public function Strpos(string $Compare_String = null):bool;
 *  @return :string;
 */
 abstract public function One_Str_by_Index(int $Index = null):string;
+/**
+*  变成小写;
+*  @return :string;
+*/
+abstract public function Lowercase():string;
+    /**
+    * @return $this
+    */
+    function Lowercase_this()
+    {
+        $this->Lowercase();
+        return $this;
+    }
 }

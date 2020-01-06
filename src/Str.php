@@ -9,6 +9,11 @@ use xltxlm\arr\Arr;
  */
 class Str extends Str\Str_implements
 {
+    public function Lowercase(): string
+    {
+        $this->setValue(strtolower($this->Value));
+        return $this->getValue();
+    }
 
     /**
      * Str constructor.
