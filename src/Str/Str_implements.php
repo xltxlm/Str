@@ -19,6 +19,7 @@ abstract class Str_implements
 
 
     /**
+    * 要处理的字符串内容;
     * @return string;
     */
             public function getValue():string        {
@@ -51,6 +52,7 @@ abstract class Str_implements
 
 
     /**
+    * 获取最后一个字符串;
     * @return string;
     */
             abstract public function getLastChar():string;
@@ -72,13 +74,6 @@ abstract class Str_implements
 
 
 
-/**
-*  ;
-*  @return :string;
-*/
-public function __toString():string    {
-        return $this->Value;
-    }
 /**
 *  根据指定的字符串,砍成数组对象,注意:会去掉空内容;
 *  @return :\xltxlm\Arr\Arr;
@@ -124,14 +119,14 @@ abstract public function Lcfirst():string;
         return $this;
     }
 /**
-*  从指定索引开始砍字符串;
+*  从指定索引开始砍字符串，采用的是mbsubtr，这样能保证截取的是可见的字，而不是截取字符;
 *  @return :string;
 */
-abstract public function Substr(int $Index = null, $Length = null):string;
+abstract public function Substr(int $Index = 0, $Length = null):string;
     /**
     * @return $this
     */
-    function Substr_this(int $Index = null, $Length = null)
+    function Substr_this(int $Index = 0, $Length = null)
     {
         $this->Substr($Index,$Length);
         return $this;

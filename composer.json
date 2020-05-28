@@ -6,10 +6,13 @@
       "email": "xltxlm@qq.com"
     }
   ],
+  "minimum-stability": "dev",
+  "description":"字符串相关的处理类,尝试实现各个下通俗易懂的统一操作方式",
   "require": {
-    "php": ">=7.1",
+    "php": "~7.1",
     "xltxlm/arr": "@dev",
-    "overtrue/pinyin": "3.0.6"
+    "overtrue/pinyin": "~4.0",
+    "ext-mbstring": "*"
   },
   "autoload": {
     "psr-4": {
@@ -17,6 +20,11 @@
         "src/",
         "./"
       ]
-    }
+    },
+    "files": [
+    ]
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9"
   }
 }

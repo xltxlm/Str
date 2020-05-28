@@ -56,7 +56,7 @@ class Str extends Str\Str_implements
 
     public function Substr(int $Index = null, $Length = null): string
     {
-        $var = substr($this->getValue(), $Index, $Length ?: strlen($this->getValue()));
+        $var = mb_substr($this->getValue(), $Index, $Length ?: strlen($this->getValue()));
         $this->setValue($var);
         return $var;
     }
