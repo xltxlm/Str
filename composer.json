@@ -12,7 +12,8 @@
     "php": "~7.1",
     "xltxlm/arr": "@dev",
     "overtrue/pinyin": "~4.0",
-    "ext-mbstring": "*"
+    "ext-mbstring": "*",
+    "ext-json": "*"
   },
   "autoload": {
     "psr-4": {

@@ -72,5 +72,26 @@ class Str extends Str\Str_implements
         return $this->Substr($Index, 1);
     }
 
+    public function getJson(): bool
+    {
+        $first = (new Str($this->getValue()))
+                ->Substr(0, 1) == '[';
+        $last = (new Str($this->getValue()))
+                ->Substr(-1, 1) == ']';
+
+        if ($first && $last) {
+            return !empty(json_decode($this->getValue(), true));
+        }
+        $first = (new Str($this->getValue()))
+                ->Substr(0, 1) == '{';
+        $last = (new Str($this->getValue()))
+                ->Substr(-1, 1) == '}';
+
+        if ($first && $last) {
+            return !empty(json_decode($this->getValue(), true));
+        }
+        return false;
+    }
+
 
 }

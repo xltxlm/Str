@@ -74,6 +74,39 @@ abstract class Str_implements
 
 
 
+/* @var bool  判断当前字符串是否符合json格式 */
+    protected $Json = false;
+    
+
+
+
+
+    /**
+    * 判断当前字符串是否符合json格式;
+    * @return bool;
+    */
+            abstract public function getJson():bool;
+    
+            public function isJson():bool        {
+        return $this->getJson();
+        }
+    
+
+
+
+
+/**
+* @param bool $Json;
+* @return $this
+*/
+    public function setJson(bool $Json  = false)
+    {
+    $this->Json = $Json;
+    return $this;
+    }
+
+
+
 /**
 *  根据指定的字符串,砍成数组对象,注意:会去掉空内容;
 *  @return :\xltxlm\Arr\Arr;

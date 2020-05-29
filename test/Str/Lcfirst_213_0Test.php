@@ -32,7 +32,7 @@ class Lcfirst_213_0Test extends TestCase
     private function runcode($input,$args)
     {
         return (new Str($input))
-            ->Lcfirst($args);
+            ->Lcfirst();
     }
 
 }
