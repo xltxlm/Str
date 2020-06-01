@@ -93,6 +93,23 @@ class Str extends Str\Str_implements
         return false;
     }
 
+    /**
+     *  判断某个字符串是不是原始字符串的结尾;
+     *
+     * @return :bool;
+     */
+    public function isEndofstr(string $newstr = null): bool
+    {
+        $new_strlen = strlen($newstr);
+        if ($new_strlen == 0) {
+            return false;
+        }
+        $index = strrpos($this->getValue(), $newstr);
+        if ($index + $new_strlen == strlen($this->getValue())) {
+            return true;
+        }
+        return false;
+    }
 
 
 }

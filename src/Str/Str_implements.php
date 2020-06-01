@@ -187,4 +187,9 @@ abstract public function Lowercase():string;
         $this->Lowercase();
         return $this;
     }
+/**
+*  判断某个字符串是不是原始字符串的结尾;
+*  @return :bool;
+*/
+abstract public function isEndofstr(string $newstr = null):bool;
 }
