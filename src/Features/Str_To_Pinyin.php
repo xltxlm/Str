@@ -24,7 +24,7 @@ class Str_To_Pinyin extends Str_To_Pinyin\Str_To_Pinyin_implements
     public function __invoke()
     {
         $pinyin = new Pinyin();
-        $item = trim(strtr($this->getValue(), ["'" => '']));
+        $item = trim(strtr($this->getValue(), ["'" => '','.'=>'']));
         $sentence = $pinyin->sentence($item);
         return strtr(preg_replace('/[ ，,]/', $this->getGlue(), strtoupper($sentence)), ['__' => "_"]);
     }

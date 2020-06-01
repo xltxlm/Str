@@ -34,6 +34,5 @@ class Lcfirst_213_0Test extends TestCase
         return (new Str($input))
             ->Lcfirst();
     }
-
 }
 

@@ -11,7 +11,7 @@ Trait __to_implements
 
 /**
 *  ;
-*  @return :\xltxlm\str\Features\Str_To_Pinyin;
+*  @return :string;
 */
-abstract public function __Str_To_Pinyin():\xltxlm\str\Features\Str_To_Pinyin;
+abstract public function __Str_To_Pinyin():string;
 }
