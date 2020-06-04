@@ -14,4 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run test suite
-        run: composer run-script test
+        run: |
+              pwd
+              ls  -alh
+              composer run-script test
