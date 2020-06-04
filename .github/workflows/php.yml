@@ -26,7 +26,6 @@ jobs:
           key: ${{ runner.os }}-node-${{ matrix.operating-system }}-${{ matrix.php-versions }}-${{ hashFiles('**/composer.lock') }}
 
       - uses: php-actions/composer@master
-        -
       - name: Validate composer.json and composer.lock
         run: composer validate
 
