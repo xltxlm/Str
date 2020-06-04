@@ -12,11 +12,16 @@ jobs:
     runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
-        operating-system: [ubuntu-latest, windows-latest, macos-latest]
+        operating-system: [macos-latest]
         php-versions: ['7.1','7.2', '7.3']
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: Composer install
+        uses: docker://composer:1.9.1
+        with:
+          args: install
 
       - name: Validate composer.json and composer.lock
         run: composer validate
