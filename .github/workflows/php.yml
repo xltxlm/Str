@@ -9,9 +9,10 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
+        operating-system: [ubuntu-latest, windows-latest, macos-latest]
         php-versions: ['7.1','7.2', '7.3']
 
     steps:
@@ -33,7 +34,7 @@ jobs:
         if: steps.composer-cache.outputs.cache-hit != 'true'
         run: composer install --prefer-dist --no-progress --no-suggest
 
-      - name: Setup PHP
+      - name: Setup PHP - ${{ matrix.operating-system }} - ${{ matrix.php-versions }}
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-versions }}
