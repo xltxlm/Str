@@ -27,5 +27,10 @@
   },
   "require-dev": {
     "phpunit/phpunit": "^9"
+  },
+  "scripts": {
+    "test": [
+      "vendor/bin/phpunit ./test -v --colors=auto --enforce-time-limit"
+    ]
   }
 }
