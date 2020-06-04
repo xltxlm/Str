@@ -25,18 +25,20 @@ jobs:
           path: vendor
           key: ${{ runner.os }}-node-${{ matrix.operating-system }}-${{ matrix.php-versions }}-${{ hashFiles('**/composer.lock') }}
 
-      - uses: php-actions/composer@master
+
+
+      - name: Setup PHP - ${{ matrix.operating-system }} - ${{ matrix.php-versions }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          tools: composer
+
       - name: Validate composer.json and composer.lock
         run: composer validate
 
       - name: Install dependencies
         if: steps.composer-cache.outputs.cache-hit != 'true'
         run: composer install --prefer-dist --no-progress --no-suggest
-
-      - name: Setup PHP - ${{ matrix.operating-system }} - ${{ matrix.php-versions }}
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: ${{ matrix.php-versions }}
 
       - name: Run test suite
         run: composer run-script test
