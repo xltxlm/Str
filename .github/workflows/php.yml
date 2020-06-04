@@ -48,3 +48,6 @@ jobs:
 
       - name: Run test suite
         run: composer run-script test
+
+      - name: 穷人，暂停1分钟，后面的才可以继续。
+        run: composer run-script test
