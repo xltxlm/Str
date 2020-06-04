@@ -13,10 +13,13 @@ jobs:
     strategy:
       matrix:
         operating-system: [macos-latest]
-        php-versions: ['7.3']
+        php-versions: ['7.2']
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: php v
+        run: php -v
 
       - name: Cache Composer packages
         id: composer-cache
@@ -32,6 +35,9 @@ jobs:
         with:
           php-version: ${{ matrix.php-versions }}
           tools: composer
+
+      - name: php v
+        run: php -v
 
       - name: Validate composer.json and composer.lock
         run: composer validate
