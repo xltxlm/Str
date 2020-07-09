@@ -1,4 +1,4 @@
-name: PHP Composer
+name: PHP phpunit Test
 
 on:
   push:
@@ -33,9 +33,6 @@ jobs:
         with:
           php-version: 7.2
           tools: composer
-
-      - name: php v
-        run: php -v
 
       - name: Validate composer.json and composer.lock
         run: composer validate

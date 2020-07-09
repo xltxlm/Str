@@ -33,8 +33,12 @@ class Str extends Str\Str_implements
 
     public function Split(string $delimiter = null): \xltxlm\Arr\Arr
     {
-        return (new Arr())
-            ->setValues(explode($delimiter, $this->getValue()));
+        $explode = explode($delimiter, $this->getValue());
+        //再去掉空的字符占位
+        $explode = array_diff($explode, [""]);
+        $explodeObject = (new Arr())
+            ->setValues($explode);
+        return $explodeObject;
     }
 
     public function Strtr(string $oldvar = null, string $newvar = null): string
